@@ -34,5 +34,6 @@ public class MyUI extends UI implements ViewDisplay {
     @Override
     public void showView(View view) {
         springViewDisplay.setContent((Component) view);
+        springViewDisplay.getContent().setSizeFull();
     }
 }
