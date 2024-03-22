@@ -5,3 +5,5 @@ cd vaadin-tutorial
 docker build --tag tutorial .
 
 docker run -d -p 8080:8080 --name tutorial tutorial
+
+http://localhost:8080
