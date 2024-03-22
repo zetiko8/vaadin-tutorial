@@ -13,7 +13,6 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 @SpringView(name = CreateDoctorView.VIEW_NAME)
@@ -34,11 +33,10 @@ public class CreateDoctorView extends VerticalLayout implements View {
 
     @PostConstruct
     void init() {
-        addComponent(new Label("Create a new doctor"));
         FormLayout form = new FormLayout();        
         form.addComponent(nameTextField.getComponent());
         form.addComponent(phoneTextField.getComponent());
-        Button submitButton = new Button("Submit");
+        Button submitButton = new Button("Create a new doctor");
         submitButton.addClickListener(
 				event -> { onSubmit(); });
         form.addComponent(submitButton);
