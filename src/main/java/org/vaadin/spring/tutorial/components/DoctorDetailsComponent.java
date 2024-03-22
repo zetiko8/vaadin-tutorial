@@ -9,18 +9,22 @@ import com.vaadin.ui.VerticalLayout;
 public class DoctorDetailsComponent extends VerticalLayout {
 
 	private static final long serialVersionUID = 1L;
+	private TutorialTextField nameTextField
+	= new TutorialTextField("Name", FontAwesome.USER);
+	private TutorialTextField phoneTextField
+	= new TutorialTextField("Phone number", FontAwesome.USER);
 
 	public DoctorDetailsComponent() {
     	setSizeFull();
+    	nameTextField.setReadonly(true);
+    	phoneTextField.setReadonly(true);
 	}
 	
 	public void update(Doctor doctor) {
-    	Label nameLabel = new Label(doctor.getName());
-    	nameLabel.setIcon(FontAwesome.USER);
-    	Label phoneNumberLabel = new Label(doctor.getPhoneNumber());
-    	phoneNumberLabel.setIcon(FontAwesome.PHONE);
-    	this.removeAllComponents();
-    	this.addComponent(nameLabel);
-    	this.addComponent(phoneNumberLabel);
+		removeAllComponents();
+    	nameTextField.setValue(doctor.getName());
+    	phoneTextField.setValue(doctor.getPhoneNumber());
+    	addComponent(nameTextField.getComponent());
+    	addComponent(phoneTextField.getComponent());
 	}
 }

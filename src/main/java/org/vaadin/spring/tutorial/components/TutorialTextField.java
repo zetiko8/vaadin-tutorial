@@ -33,4 +33,12 @@ public class TutorialTextField {
 	public String getValue () {
 		return textField.getValue();
 	}
+	
+	public void setReadonly (boolean readonly) {
+		this.textField.setReadOnly(readonly);
+	}
+
+	public void setValue(String value) {
+		this.textField.setValue(value);
+	}
 }
